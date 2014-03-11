@@ -4,9 +4,6 @@
  */
 "use strict";
 var rocambole = require("rocambole");
-var estraverse = require("estraverse");
-var esprima = require("esprima");
-var fs = require("fs");
 // return matched nodes in nodeRangeList
 function nodeStartToken(nodeRangeList, token) {
     var tokenStart = token.range[0];
@@ -77,9 +74,7 @@ function genSyntaxHTML(src) {
         });
         token = token.next;
     }
-    return html;
+    return html.join("");
 }
 
-var code = fs.readFileSync(__dirname + "/example/index.js", "utf-8");
-console.log(genSyntaxHTML(code).join(""));
-module.exports = genSyntaxHTML;
+module.exports.genSyntaxHTML = genSyntaxHTML;
