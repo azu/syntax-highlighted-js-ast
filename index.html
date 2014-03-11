@@ -76,13 +76,28 @@
 <pre><code><Program>*
  * Created by azu on 2014/03/11.
  * LICENSE : MIT
-
+ 
 <ExpressionStatement><Literal>"use strict"</Literal>;</ExpressionStatement>
 
 <FunctionDeclaration>function <Identifier>A</Identifier>(<Identifier>a</Identifier>) <BlockStatement>{
-    <ExpressionStatement><AssignmentExpression><MemberExpression><ThisExpression>this</ThisExpression>.<Identifier>varA</Identifier></MemberExpression> = <Identifier>a</Identifier></AssignmentExpression>;</ExpressionStatement>
+    <ExpressionStatement><AssignmentExpression><MemberExpression><ThisExpression>this</ThisExpression>.<Identifier>varA</MemberExpression></Identifier> = <Identifier>a</AssignmentExpression></Identifier>;</ExpressionStatement>
+}</FunctionDeclaration></BlockStatement>
+<VariableDeclaration>var <VariableDeclarator><Identifier>index</Identifier> = <Literal>"syntax"</VariableDeclarator></Literal>;</VariableDeclaration>
+
+<FunctionDeclaration>function <Identifier>asyncFunction</Identifier>() <BlockStatement>{
+     <1>
+    <ReturnStatement>return <NewExpression>new <Identifier>Promise</Identifier>(<FunctionExpression>function (<Identifier>resolve</Identifier>, <Identifier>reject</Identifier>) <BlockStatement>{
+        <ExpressionStatement><CallExpression><Identifier>setTimeout</Identifier>(<FunctionExpression>function () <BlockStatement>{
+            <ExpressionStatement><CallExpression><Identifier>resolve</Identifier>(<Literal>'Async Hello world'</Literal>)</CallExpression>;</ExpressionStatement>
+        }</BlockStatement></FunctionExpression>, <Literal>16</Literal>)</CallExpression>;</ExpressionStatement>
+    }</BlockStatement></FunctionExpression>)</NewExpression>;</ReturnStatement>
 }</BlockStatement></FunctionDeclaration>
-<VariableDeclaration>var <Identifier><VariableDeclarator>index</Identifier> = <Literal>"syntax"</Literal></VariableDeclarator>;</VariableDeclaration></Program>
+ <2>
+<Identifier><CallExpression><MemberExpression><CallExpression><MemberExpression><CallExpression><ExpressionStatement>asyncFunction</Identifier>()</CallExpression>.<Identifier>then</Identifier></MemberExpression>(<FunctionExpression>function (<Identifier>value</Identifier>) <BlockStatement>{
+    <Identifier><MemberExpression><CallExpression><ExpressionStatement>console</Identifier>.<Identifier>log</Identifier></MemberExpression>(<Identifier>value</Identifier>)</CallExpression>;</ExpressionStatement>     => 'Async Hello world'
+}</BlockStatement></FunctionExpression>)</CallExpression>.<Identifier>catch</Identifier></MemberExpression>(<FunctionExpression>function (<Identifier>error</Identifier>) <BlockStatement>{
+    <Identifier><MemberExpression><CallExpression><ExpressionStatement>console</Identifier>.<Identifier>log</Identifier></MemberExpression>(<Identifier>error</Identifier>)</CallExpression>;</ExpressionStatement>
+}</BlockStatement></FunctionExpression>)</CallExpression>;</ExpressionStatement></Program>
 </code></pre>
 </body>
 </html>

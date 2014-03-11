@@ -6,7 +6,11 @@ a thought experiment project parts of [azu/pony-js-ast](https://github.com/azu/p
 
 JavaScript syntax highlighting + JS AST as DOM
 
-![img](http://monosnap.com/image/B7mJRuDCsqhlnT8M1ByadxIl0MgYTS.png)
+![img](http://monosnap.com/image/Ey0qOn0XxMhsNyt8lpJDkoO5boaUxs.png)
+
+``` sh
+node index.js
+```
 
 ## Contributing
 
