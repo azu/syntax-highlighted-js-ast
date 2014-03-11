@@ -53,12 +53,14 @@ function genSyntaxHTML(src) {
     var html = [];
     // ↑ seeking
     var token = deeperNode.startToken;
+    var matchStartOfToken = nodeStartToken.bind(null, nodeRangeList);
+    var matchEndOfToken = nodeEndToken.bind(null, nodeRangeList);
     while (token !== ast.startToken.prev) {
-        nodeEndToken(nodeRangeList, token).forEach(function (matchNode) {
+        matchEndOfToken(token).forEach(function (matchNode) {
             html.unshift(matchNode);
         });
         html.unshift(tokenElement(token));
-        nodeStartToken(nodeRangeList, token).forEach(function (matchNode) {
+        matchStartOfToken(token).forEach(function (matchNode) {
             html.unshift(matchNode);
         });
         token = token.prev;
@@ -66,11 +68,11 @@ function genSyntaxHTML(src) {
     // ↓ seeking
     token = deeperNode.startToken.next;
     while (token !== ast.endToken.next) {
-        nodeStartToken(nodeRangeList, token).forEach(function (matchNode) {
+        matchStartOfToken(token).forEach(function (matchNode) {
             html.push(matchNode);
         });
         html.push(tokenElement(token));
-        nodeEndToken(nodeRangeList, token).forEach(function (matchNode) {
+        matchEndOfToken(token).forEach(function (matchNode) {
             html.push(matchNode);
         });
         token = token.next;
