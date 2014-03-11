@@ -73,16 +73,16 @@
     </style>
 </head>
 <body>
-<pre><code><BlockComment>*
-    * Created by azu on 2014/03/11.
-    * LICENSE : MIT
-</BlockComment><LineBreak>
-</LineBreak><String>"use strict"</String><Punctuator>;</Punctuator><LineBreak>
-</LineBreak><LineBreak>
-</LineBreak><Keyword>function</Keyword><WhiteSpace> </WhiteSpace><Identifier>A</Identifier><Punctuator>(</Punctuator><Identifier>a</Identifier><Punctuator>)</Punctuator><WhiteSpace> </WhiteSpace><Punctuator>{</Punctuator><LineBreak>
-</LineBreak><WhiteSpace>    </WhiteSpace><Keyword>this</Keyword><Punctuator>.</Punctuator><Identifier>varA</Identifier><WhiteSpace> </WhiteSpace><Punctuator>=</Punctuator><WhiteSpace> </WhiteSpace><Identifier>a</Identifier><Punctuator>;</Punctuator><LineBreak>
-</LineBreak><Punctuator>}</Punctuator><LineBreak>
-</LineBreak><Keyword>var</Keyword><WhiteSpace> </WhiteSpace><Identifier>index</Identifier><WhiteSpace> </WhiteSpace><Punctuator>=</Punctuator><WhiteSpace> </WhiteSpace><String>"syntax"</String><Punctuator>;</Punctuator>
+<pre><code><Program>*
+ * Created by azu on 2014/03/11.
+ * LICENSE : MIT
+
+<ExpressionStatement><Literal>"use strict"</Literal>;</ExpressionStatement>
+
+<FunctionDeclaration>function <Identifier>A</Identifier>(<Identifier>a</Identifier>) <BlockStatement>{
+    <ExpressionStatement><AssignmentExpression><MemberExpression><ThisExpression>this</ThisExpression>.<Identifier>varA</Identifier></MemberExpression> = <Identifier>a</Identifier></AssignmentExpression>;</ExpressionStatement>
+}</BlockStatement></FunctionDeclaration>
+<VariableDeclaration>var <Identifier><VariableDeclarator>index</Identifier> = <Literal>"syntax"</Literal></VariableDeclarator>;</VariableDeclaration></Program>
 </code></pre>
 </body>
 </html>
