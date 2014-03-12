@@ -5,8 +5,8 @@
 "use strict";
 
 var fs = require("fs");
-var assert = require("assert");
-var genSyntaxHTML = require("../").genSyntaxHTML;
+var assert = require("power-assert");
+var genSyntaxHTML = require("../index").genSyntaxHTML;
 describe("GenSyntaxHTML", function () {
     context("with JavaScript code string", function () {
         it("should return string", function () {
@@ -18,10 +18,15 @@ describe("GenSyntaxHTML", function () {
 
     context("with without string", function () {
         it("should throw", function () {
-            assert.throws(function(){
+            assert.throws(function () {
                 genSyntaxHTML({});
             });
         });
-    })
-
+    });
+    describe("with block comment", function () {
+        it("should contain /* comment */", function () {
+            var result = genSyntaxHTML("/* comment */");
+            assert.equal(result, "<Program>/* comment */</Program>");
+        });
+    });
 });

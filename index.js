@@ -27,6 +27,9 @@ function nodeEndToken(nodeRangeList, token) {
 
 
 function tokenElement(token) {
+    if (token.type === "BlockComment") {
+        return token.raw;
+    }
     return token.value;
 }
 function genSyntaxHTML(src) {
