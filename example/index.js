@@ -5,9 +5,10 @@
 "use strict";
 
 function A(a) {
-    this.varA = a;
+    this.internet = a;
 }
 var index = "syntax";
+var regexp = /promise/;
 
 function asyncFunction() {
     // <1>

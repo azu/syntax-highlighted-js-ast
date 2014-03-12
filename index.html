@@ -4,85 +4,46 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        pre{
+        pre {
             font-size: 32px;
         }
-        .RegularExpression { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
-        .c { color: #999988; font-style: italic; }
-        .err { color: #a61717; background-color: #e3d2d2; }
-        .k { font-weight: bold; }
-        .o { font-weight: bold; }
-        .cm { color: #999988; font-style: italic; }
-        NumericLiteral { color: #999999; font-weight: bold; }
-        .c1 { color: #999988; font-style: italic; }
-        .cs { color: #999999; font-weight: bold; font-style: italic; }
-        .gd { color: #000000; background-color: #ffdddd; }
-        .gd .x { color: #000000; background-color: #ffaaaa; }
-        .ge { font-style: italic; }
-        .gr { color: #aa0000; }
-        .gh { color: #999999; }
-        .gi { color: #000000; background-color: #ddffdd; }
-        .gi .x { color: #000000; background-color: #aaffaa; }
-        .go { color: #888888; }
-        .gp { color: #555555; }
-        .gs { font-weight: bold; }
-        .gu { color: #800080; font-weight: bold; }
-        .gt { color: #aa0000; }
-        .kc { font-weight: bold; }
-        .kd { font-weight: bold; }
-        .kn { font-weight: bold; }
-        .kp { font-weight: bold; }
-        .kr { font-weight: bold; }
-        Keyword { color: #445588; font-weight: bold; }
-        Identifier { color: #009999; }
-        StringLiteral { color: #dd1144; }
-        .n { color: #333333; }
-        .na { color: teal; }
-        .nb { color: #0086b3; }
-        .nc { color: #445588; font-weight: bold; }
-        StringLiteral { color: teal; }
-        .ni { color: purple; }
-        .ne { color: #990000; font-weight: bold; }
-        .nf { color: #990000; font-weight: bold; }
-        .nn { color: #555555; }
-        .nt { color: navy; }
-        .nv { color: teal; }
-        .ow { font-weight: bold; }
-        .w { color: #bbbbbb; }
-        .mf { color: #009999; }
-        .mh { color: #009999; }
-        .mi { color: #009999; }
-        .mo { color: #009999; }
-        .sb { color: #dd1144; }
-        .sc { color: #dd1144; }
-        .sd { color: #dd1144; }
-        .s2 { color: #dd1144; }
-        .se { color: #dd1144; }
-        .sh { color: #dd1144; }
-        .si { color: #dd1144; }
-        .sx { color: #dd1144; }
-        .sr { color: #009926; }
-        .s1 { color: #dd1144; }
-        .ss { color: #990073; }
-        .bp { color: #999999; }
-        .vc { color: teal; }
-        .vg { color: teal; }
-        .vi { color: teal; }
-        .il { color: #009999; }
-        .gc { color: #999; background-color: #EAF2F5; }
+
+
+        Keyword {
+            color: #445588;
+            font-weight: bold;
+        }
+
+        Identifier {
+            color: #009999;
+        }
+
+        Literal {
+            color: #E67A00;
+        }
+
+        VariableDeclaration {
+            color: purple;
+        }
+
+        ThrowStatement {
+            color: red;
+        }
     </style>
 </head>
 <body>
-<pre><code><Program>*
+<pre><code>
+    <Program>/**
  * Created by azu on 2014/03/11.
  * LICENSE : MIT
-
+ */
 <ExpressionStatement><Literal>"use strict"</Literal>;</ExpressionStatement>
 
 <FunctionDeclaration>function <Identifier>A</Identifier>(<Identifier>a</Identifier>) <BlockStatement>{
-    <ExpressionStatement><AssignmentExpression><MemberExpression><ThisExpression>this</ThisExpression>.<Identifier>varA</MemberExpression></Identifier> = <Identifier>a</AssignmentExpression></Identifier>;</ExpressionStatement>
+    <ExpressionStatement><AssignmentExpression><MemberExpression><ThisExpression>this</ThisExpression>.<Identifier>internet</MemberExpression></Identifier> = <Identifier>a</AssignmentExpression></Identifier>;</ExpressionStatement>
 }</FunctionDeclaration></BlockStatement>
 <VariableDeclaration>var <VariableDeclarator><Identifier>index</Identifier> = <Literal>"syntax"</VariableDeclarator></Literal>;</VariableDeclaration>
+<VariableDeclaration>var <VariableDeclarator><Identifier>regexp</Identifier> = <Literal>/promise/</VariableDeclarator></Literal>;</VariableDeclaration>
 
 <FunctionDeclaration>function <Identifier>asyncFunction</Identifier>() <BlockStatement>{
      <1>
@@ -97,6 +58,7 @@
     <Identifier><MemberExpression><CallExpression><ExpressionStatement>console</Identifier>.<Identifier>log</Identifier></MemberExpression>(<Identifier>value</Identifier>)</CallExpression>;</ExpressionStatement>     => 'Async Hello world'
 }</BlockStatement></FunctionExpression>)</CallExpression>.<Identifier>catch</Identifier></MemberExpression>(<FunctionExpression>function (<Identifier>error</Identifier>) <BlockStatement>{
     <Identifier><MemberExpression><CallExpression><ExpressionStatement>console</Identifier>.<Identifier>log</Identifier></MemberExpression>(<Identifier>error</Identifier>)</CallExpression>;</ExpressionStatement>
-}</BlockStatement></FunctionExpression>)</CallExpression>;</ExpressionStatement></Program></code></pre>
+}</BlockStatement></FunctionExpression>)</CallExpression>;</ExpressionStatement></Program>
+</code></pre>
 </body>
 </html>
