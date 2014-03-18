@@ -50,3 +50,7 @@ var syntaxType = {
     YieldExpression: 'YieldExpression'
 };
 
+console.log(Object.keys(syntaxType).map(function(e){
+    return e + "{}";
+}).join(""));
+
